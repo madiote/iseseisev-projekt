@@ -3,6 +3,7 @@
 const rows = 8;
 const columns = 10;
 const blocks = [1, 2, 3, 4];
+const colours = ["#FF9AA2", "#FFB7B2",  "#FFDAC1", "#E2F0CB", "#B5EAD7", "#C7CEEA"];
 
 function forceHttps() {
     // Ensures that the Greeny page is loaded over HTTPS - https://stackoverflow.com/a/4597085
