@@ -2,3 +2,8 @@ body {
     background: rgb(176, 224, 223);
     color: #fff;
 }
+h1 {
+    left: 50%;
+    text-align: center;
+    border: 0.15em dotted #fff;
+}
