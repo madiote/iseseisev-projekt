@@ -1,5 +1,9 @@
 /* jshint esversion:6 */
 
+const rows = 8;
+const columns = 10;
+const blocks = [1, 2, 3, 4];
+
 function forceHttps() {
     // Ensures that the Greeny page is loaded over HTTPS - https://stackoverflow.com/a/4597085
     if (window.location.href.indexOf("greeny.cs.tlu.ee") != -1) {
