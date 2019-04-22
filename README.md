@@ -1,18 +1,18 @@
 # iseseisev-projekt
-Eesrakenduste arendamise iseseisva projekti lähteülesanne. 
 
-Töö võib teha teha 1-4 liikmelise meeskonnana. Punkte jaotatakse vastavalt sellele, mitu liiget on meeskonnas:
-* 1 liige - max 60 punkti/inimene.
-* 2 liiget - max 40 punkti/inimene.
-* 3 liiget - max 30 punkti/inimene.
-* 4 liiget - max 20 punkti/inimene.
+JEWELBLOCKS
 
-**NB! Kui meeskonnas on rohkem kui üks liige, siis peab githubis selgelt välja tulema, kes millist osa tegi, et oleks võimalik hinnata iga meeskonnaliikme individuaalset panust.**
+Karen Minski ja Madis Otenurm
+
+Teeme uue versiooni mängust Jewel Blast App Storeist ja Play poest.
+
+Mängulaud on 8x10 bloki suurune. Põhimõte on, et alt poolt tekib juhuline blokkide struktuur ja mängija peab liigutama blokki nii, et terve rida saaks täis ja seejärel häviks, iga kord kui liigutad plokki tekib alt uus rida blokke. Kui mängulaud saab täis blokke ehk blokkide torn jõuab 10. reani on mäng läbi. Blokid on suurustes 1x1, 1x2, 1x3 ja 1x4.
+
+
+
 
 README.md fail sisaldab:
-1. suurelt rakenduse nime;
-1. autorite nimesid;
-1. rakenduse funktsionaalsuse kirjeldust;
+
 1. ekraanitõmmist rakendusest.
 
 Rakenduse puhul peavad olema täidetud vähemalt järgmised nõuded:
