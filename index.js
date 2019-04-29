@@ -1,27 +1,28 @@
+/* jshint esversion: 6 */
+
 document.addEventListener('DOMContentLoaded', function () {
 
   //
   // Initialize stuff
-  // 初始化物件，宣告一堆變數。
   //
 
-  var grid = null;
-  var docElem = document.documentElement;
-  var demo = document.querySelector('.grid-demo');
-  var gridElement = demo.querySelector('.grid');
-  var filterField = demo.querySelector('.filter-field');
-  var searchField = demo.querySelector('.search-field');
-  var sortField = demo.querySelector('.sort-field');
-  var layoutField = demo.querySelector('.layout-field');
-  var addItemsElement = demo.querySelector('.add-more-items');
-  var characters = 'abcdefghijklmnopqrstuvwxyz';
-  var filterOptions = ['red', 'blue', 'green'];
-  var dragOrder = [];
-  var uuid = 0;
-  var filterFieldValue;
-  var sortFieldValue;
-  var layoutFieldValue;
-  var searchFieldValue;
+  let grid = null;
+  let docElem = document.documentElement;
+  let demo = document.querySelector('.grid-demo');
+  let gridElement = demo.querySelector('.grid');
+  let filterField = demo.querySelector('.filter-field');
+  let searchField = demo.querySelector('.search-field');
+  let sortField = demo.querySelector('.sort-field');
+  let layoutField = demo.querySelector('.layout-field');
+  let addItemsElement = demo.querySelector('.add-more-items');
+  let characters = 'abcdefghijklmnopqrstuvwxyz';
+  let filterOptions = ['red', 'blue', 'green'];
+  let dragOrder = [];
+  let uuid = 0;
+  let filterFieldValue;
+  let sortFieldValue;
+  let layoutFieldValue;
+  let searchFieldValue;
 
   //
   // Grid helper functions
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Search field binding.
     searchField.addEventListener('keyup', function () {
-      var newSearch = searchField.value.toLowerCase();
+      let newSearch = searchField.value.toLowerCase();
       if (searchFieldValue !== newSearch) {
         searchFieldValue = newSearch;
         filter();
@@ -69,34 +70,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function initGrid() {
 
-    var dragCounter = 0;
+    let dragCounter = 0;
 
     grid = new Muuri(gridElement, {
-      items: generateElements(20),
-      layoutDuration: 400,
-      layoutEasing: 'ease',
-      dragEnabled: true,
-      dragSortInterval: 50,
-      dragContainer: document.body,
-      dragStartPredicate: function (item, event) {
-        var isDraggable = sortFieldValue === 'order';
-        var isRemoveAction = elementMatches(event.target, '.card-remove, .card-remove i');
-        return isDraggable && !isRemoveAction ? Muuri.ItemDrag.defaultStartPredicate(item, event) : false;
-      },
-      dragReleaseDuration: 400,
-      dragReleseEasing: 'ease'
-    })
-    .on('dragStart', function () {
-      ++dragCounter;
-      docElem.classList.add('dragging');
-    })
-    .on('dragEnd', function () {
-      if (--dragCounter < 1) {
-        docElem.classList.remove('dragging');
-      }
-    })
-    .on('move', updateIndices)
-    .on('sort', updateIndices);
+        items: generateElements(20),
+        layoutDuration: 400,
+        layoutEasing: 'ease',
+        dragEnabled: true,
+        dragSortInterval: 50,
+        dragContainer: document.body,
+        dragStartPredicate: function (item, event) {
+          let isDraggable = sortFieldValue === 'order';
+          let isRemoveAction = elementMatches(event.target, '.card-remove, .card-remove i');
+          return isDraggable && !isRemoveAction ? Muuri.ItemDrag.defaultStartPredicate(item, event) : false;
+        },
+        dragReleaseDuration: 400,
+        dragReleseEasing: 'ease'
+      })
+      .on('dragStart', function () {
+        ++dragCounter;
+        docElem.classList.add('dragging');
+      })
+      .on('dragEnd', function () {
+        if (--dragCounter < 1) {
+          docElem.classList.remove('dragging');
+        }
+      })
+      .on('move', updateIndices)
+      .on('sort', updateIndices);
 
   }
 
@@ -104,9 +105,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     filterFieldValue = filterField.value;
     grid.filter(function (item) {
-      var element = item.getElement();
-      var isSearchMatch = !searchFieldValue ? true : (element.getAttribute('data-title') || '').toLowerCase().indexOf(searchFieldValue) > -1;
-      var isFilterMatch = !filterFieldValue ? true : (element.getAttribute('data-color') || '') === filterFieldValue;
+      let element = item.getElement();
+      let isSearchMatch = !searchFieldValue ? true : (element.getAttribute('data-title') || '').toLowerCase().indexOf(searchFieldValue) > -1;
+      let isFilterMatch = !filterFieldValue ? true : (element.getAttribute('data-color') || '') === filterFieldValue;
       return isSearchMatch && isFilterMatch;
     });
 
@@ -115,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function sort() {
 
     // Do nothing if sort value did not change.
-    var currentSort = sortField.value;
+    let currentSort = sortField.value;
     if (sortFieldValue === currentSort) {
       return;
     }
@@ -142,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function addItems() {
 
     // Generate new elements.
-    var newElems = generateElements(5);
+    let newElems = generateElements(5);
 
     // Set the display of the new elements to "none" so it will be hidden by
     // default.
@@ -151,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Add the elements to the grid.
-    var newItems = grid.add(newElems);
+    let newItems = grid.add(newElems);
 
     // Update UI indices.
     updateIndices();
@@ -169,17 +170,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function removeItem(e) {
 
-    var elem = elementClosest(e.target, '.item');
-    grid.hide(elem, {onFinish: function (items) {
-      var item = items[0];
-      grid.remove(item, {removeElements: true});
-      if (sortFieldValue !== 'order') {
-        var itemIndex = dragOrder.indexOf(item);
-        if (itemIndex > -1) {
-          dragOrder.splice(itemIndex, 1);
+    let elem = elementClosest(e.target, '.item');
+    grid.hide(elem, {
+      onFinish: function (items) {
+        let item = items[0];
+        grid.remove(item, {
+          removeElements: true
+        });
+        if (sortFieldValue !== 'order') {
+          let itemIndex = dragOrder.indexOf(item);
+          if (itemIndex > -1) {
+            dragOrder.splice(itemIndex, 1);
+          }
         }
       }
-    }});
+    });
     updateIndices();
 
   }
@@ -203,26 +208,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function generateElements(amount) {
 
-    var ret = [];
+    let ret = [];
 
-    for (var i = 0, len = amount || 1; i < amount; i++) {
+    for (let i = 0, len = amount || 1; i < amount; i++) {
 
-      var id = ++uuid;
-      var color = getRandomItem(filterOptions);
-      var title = generateRandomWord(2);
-      var width = Math.floor(Math.random() * 2) + 1;
-      var height = Math.floor(Math.random() * 2) + 1;
-      var itemElem = document.createElement('div');
-      var itemTemplate = '' +
-          '<div class="item h' + height + ' w' + width + ' ' + color + '" data-id="' + id + '" data-color="' + color + '" data-title="' + title + '">' +
-            '<div class="item-content">' +
-              '<div class="card">' +
-                '<div class="card-id">' + id + '</div>' +
-                '<div class="card-title">' + title + '</div>' +
-                '<div class="card-remove"><i class="material-icons">&#xE5CD;</i></div>' +
-              '</div>' +
-            '</div>' +
-          '</div>';
+      let id = ++uuid;
+      let color = getRandomItem(filterOptions);
+      let title = generateRandomWord(2);
+      let width = Math.floor(Math.random() * 2) + 1;
+      let height = Math.floor(Math.random() * 2) + 1;
+      let itemElem = document.createElement('div');
+      let itemTemplate = '' +
+        '<div class="item h' + height + ' w' + width + ' ' + color + '" data-id="' + id + '" data-color="' + color + '" data-title="' + title + '">' +
+        '<div class="item-content">' +
+        '<div class="card">' +
+        '<div class="card-id">' + id + '</div>' +
+        '<div class="card-title">' + title + '</div>' +
+        '<div class="card-remove"><i class="material-icons">&#xE5CD;</i></div>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
 
       itemElem.innerHTML = itemTemplate;
       ret.push(itemElem.firstChild);
@@ -241,8 +246,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function generateRandomWord(length) {
 
-    var ret = '';
-    for (var i = 0; i < length; i++) {
+    let ret = '';
+    for (let i = 0; i < length; i++) {
       ret += getRandomItem(characters);
     }
     return ret;
@@ -251,16 +256,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function compareItemTitle(a, b) {
 
-    var aVal = a.getElement().getAttribute('data-title') || '';
-    var bVal = b.getElement().getAttribute('data-title') || '';
+    let aVal = a.getElement().getAttribute('data-title') || '';
+    let bVal = b.getElement().getAttribute('data-title') || '';
     return aVal < bVal ? -1 : aVal > bVal ? 1 : 0;
 
   }
 
   function compareItemColor(a, b) {
 
-    var aVal = a.getElement().getAttribute('data-color') || '';
-    var bVal = b.getElement().getAttribute('data-color') || '';
+    let aVal = a.getElement().getAttribute('data-color') || '';
+    let bVal = b.getElement().getAttribute('data-color') || '';
     return aVal < bVal ? -1 : aVal > bVal ? 1 : compareItemTitle(a, b);
 
   }
@@ -276,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function elementMatches(element, selector) {
 
-    var p = Element.prototype;
+    let p = Element.prototype;
     return (p.matches || p.matchesSelector || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || p.oMatchesSelector).call(element, selector);
 
   }
@@ -284,14 +289,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function elementClosest(element, selector) {
 
     if (window.Element && !Element.prototype.closest) {
-      var isMatch = elementMatches(element, selector);
+      let isMatch = elementMatches(element, selector);
       while (!isMatch && element && element !== document) {
         element = element.parentNode;
         isMatch = element && element !== document && elementMatches(element, selector);
       }
       return element && element !== document ? element : null;
-    }
-    else {
+    } else {
       return element.closest(selector);
     }
 
