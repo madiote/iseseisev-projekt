@@ -13,19 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
   let docElem = document.documentElement;
   let demo = document.querySelector('.grid-demo');
   let gridElement = demo.querySelector('.grid');
-  let filterField = demo.querySelector('.filter-field');
-  let searchField = demo.querySelector('.search-field');
-  let sortField = demo.querySelector('.sort-field');
-  let layoutField = demo.querySelector('.layout-field');
   let addItemsElement = demo.querySelector('.add-more-items');
   let characters = 'abcdefghijklmnopqrstuvwxyz';
   let filterOptions = ['red', 'orange', 'yellow', 'blue', 'green', 'purple'];
   let dragOrder = [];
   let uuid = 0;
-  let filterFieldValue;
-  let sortFieldValue;
-  let layoutFieldValue;
-  let searchFieldValue;
 
   //
   // Grid helper functions
@@ -34,32 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function initDemo() {
 
     initGrid();
-
-    // Reset field values.
-    searchField.value = '';
-    [sortField, filterField, layoutField].forEach(function (field) {
-      field.value = field.querySelectorAll('option')[0].value;
-    });
-
-    // Set inital search query, active filter, active sort value and active layout.
-    searchFieldValue = searchField.value.toLowerCase();
-    filterFieldValue = filterField.value;
-    sortFieldValue = sortField.value;
-    layoutFieldValue = layoutField.value;
-
-    // Search field binding.
-    searchField.addEventListener('keyup', function () {
-      let newSearch = searchField.value.toLowerCase();
-      if (searchFieldValue !== newSearch) {
-        searchFieldValue = newSearch;
-        filter();
-      }
-    });
-
-    // Filter, sort and layout bindings.
-    //filterField.addEventListener('change', filter);
-    //sortField.addEventListener('change', sort);
-    layoutField.addEventListener('change', changeLayout);
+    changeLayout();
 
     // Add/remove items bindings.
     addItemsElement.addEventListener('click', addItems);
@@ -83,9 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
         dragSortInterval: 50,
         dragContainer: document.body,
         dragStartPredicate: function (item, event) {
-          let isDraggable = sortFieldValue === 'order';
           let isRemoveAction = elementMatches(event.target, '.card-remove, .card-remove i');
-          return isDraggable && !isRemoveAction ? Muuri.ItemDrag.defaultStartPredicate(item, event) : false;
+          return true && !isRemoveAction ? Muuri.ItemDrag.defaultStartPredicate(item, event) : false;
         },
         dragReleaseDuration: 400,
         dragReleseEasing: 'ease'
@@ -104,71 +70,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
 
-  function filter() {
-
-    filterFieldValue = filterField.value;
-    grid.filter(function (item) {
-      let element = item.getElement();
-      let isSearchMatch = !searchFieldValue ? true : (element.getAttribute('data-title') || '').toLowerCase().indexOf(searchFieldValue) > -1;
-      let isFilterMatch = !filterFieldValue ? true : (element.getAttribute('data-color') || '') === filterFieldValue;
-      return isSearchMatch && isFilterMatch;
-    });
-
-  }
-
-  function sort() {
-
-    // Do nothing if sort value did not change.
-    let currentSort = sortField.value;
-    if (sortFieldValue === currentSort) {
-      return;
-    }
-
-    // If we are changing from "order" sorting to something else
-    // let's store the drag order.
-    if (sortFieldValue === 'order') {
-      dragOrder = grid.getItems();
-    }
-
-    // Sort the items.
-    grid.sort(
-      currentSort === 'title' ? compareItemTitle :
-      currentSort === 'color' ? compareItemColor :
-      dragOrder
-    );
-
-    // Update indices and active sort value.
-    updateIndices();
-    sortFieldValue = currentSort;
-
-  }
-
   function addItems() {
 
     // Generate new elements.
     let newElems = generateElements(5);
-
-    // Set the display of the new elements to "none" so it will be hidden by
-    // default.
-    newElems.forEach(function (item) {
-      item.style.display = 'none';
-    });
 
     // Add the elements to the grid.
     let newItems = grid.add(newElems);
 
     // Update UI indices.
     updateIndices();
-
-    // Sort the items only if the drag sorting is not active.
-    if (sortFieldValue !== 'order') {
-      grid.sort(sortFieldValue === 'title' ? compareItemTitle : compareItemColor);
-      dragOrder = dragOrder.concat(newItems);
-    }
-
-    // Finally filter the items.
-    filter();
-
   }
 
   function removeItem(e) {
@@ -180,12 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
         grid.remove(item, {
           removeElements: true
         });
-        if (sortFieldValue !== 'order') {
-          let itemIndex = dragOrder.indexOf(item);
-          if (itemIndex > -1) {
-            dragOrder.splice(itemIndex, 1);
-          }
-        }
       }
     });
     updateIndices();
@@ -194,12 +99,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function changeLayout() {
 
-    layoutFieldValue = layoutField.value;
     grid._settings.layout = {
       horizontal: false,
-      alignRight: layoutFieldValue.indexOf('right') > -1,
-      alignBottom: layoutFieldValue.indexOf('bottom') > -1,
-      fillGaps: layoutFieldValue.indexOf('fillgaps') > -1
+      alignRight: false,
+      alignBottom: true,
+      fillGaps: true
     };
     grid.layout();
 
@@ -218,7 +122,13 @@ document.addEventListener('DOMContentLoaded', function () {
       let id = ++uuid;
       let color = getRandomItem(filterOptions);
       let title = "";
-      let width = Math.floor(Math.random() * 2) + 1;
+      let width;
+
+      if (color == "white")
+        width = 1;
+      else
+        width = Math.floor(Math.random() * 2) + 1;
+
       let height = 1;
       let itemElem = document.createElement('div');
       let itemTemplate = '' +
