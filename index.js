@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize stuff
   //
 
+  // Default options
+  Muuri.defaultOptions.dragAxis = 'x';
+
+  // Variables
   let grid = null;
   let docElem = document.documentElement;
   let demo = document.querySelector('.grid-demo');
@@ -54,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Filter, sort and layout bindings.
-    filterField.addEventListener('change', filter);
-    sortField.addEventListener('change', sort);
+    //filterField.addEventListener('change', filter);
+    //sortField.addEventListener('change', sort);
     layoutField.addEventListener('change', changeLayout);
 
     // Add/remove items bindings.
@@ -214,9 +218,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       let id = ++uuid;
       let color = getRandomItem(filterOptions);
-      let title = generateRandomWord(2);
+      let title = "";
       let width = Math.floor(Math.random() * 2) + 1;
-      let height = Math.floor(Math.random() * 2) + 1;
+      let height = 1;
       let itemElem = document.createElement('div');
       let itemTemplate = '' +
         '<div class="item h' + height + ' w' + width + ' ' + color + '" data-id="' + id + '" data-color="' + color + '" data-title="' + title + '">' +
