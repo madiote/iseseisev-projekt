@@ -2,10 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  //
-  // Initialize stuff
-  //
-
   // Default options
   Muuri.defaultOptions.dragAxis = 'x';
 
@@ -15,9 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let demo = document.querySelector('.grid-demo');
   let gridElement = demo.querySelector('.grid');
   let addItemsElement = demo.querySelector('.add-more-items');
-  let characters = 'abcdefghijklmnopqrstuvwxyz';
   let filterOptions = ['red', 'blue', 'green', 'white'];
-  let dragOrder = [];
   let uuid = 0;
 
   //
@@ -99,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function changeLayout() {
-
     grid._settings.layout = {
       horizontal: false,
       alignRight: false,
@@ -138,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="card">' +
         '<div class="card-id">' + id + '</div>' +
         '<div class="card-title">' + title + '</div>' +
-        '<div class="card-remove"><i class="material-icons">&#xE5CD;</i></div>' +
         '</div>' +
         '</div>' +
         '</div>';
@@ -155,16 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function getRandomItem(collection) {
 
     return collection[Math.floor(Math.random() * collection.length)];
-
-  }
-
-  function generateRandomWord(length) {
-
-    let ret = '';
-    for (let i = 0; i < length; i++) {
-      ret += getRandomItem(characters);
-    }
-    return ret;
 
   }
 
