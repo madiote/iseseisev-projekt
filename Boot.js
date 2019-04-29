@@ -17,15 +17,12 @@ BasicGame.Boot.prototype = {
 
     create: function () {
 
-        if (this.game.device.desktop)
-        {
+        if (this.game.device.desktop) {
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
             this.scale.pageAlignHorizontally = true;
-        }
-        else
-        {
-           
+        } else {
+
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             this.scale.minWidth = 150;
             this.scale.minHeight = 250;
