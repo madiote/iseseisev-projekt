@@ -95,40 +95,224 @@
   height: 100%;
 }
 
-.card {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 300;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 2px solid;
-  color: #333;
-  border-radius: 4px;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+.item.red .card {
+  outline: 0;
+  color: -moz-linear-gradient(top,
+    #FFFFFF 0%,
+    #FF0000 50%,
+    #FFFFFF 100%);
+  /* FF3.6+ */
+  color: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%, #FFFFFF),
+    color-stop(50%, #FF0000),
+    color-stop(100%, #FFFFFF));
+  /* Chrome,Safari4+ */
+  color: -webkit-linear-gradient(top,
+    #FFFFFF 0%,
+    #FF0000 50%,
+    #FFFFFF 100%);
+  /* Chrome10+,Safari5.1+ */
+  color: -o-linear-gradient(top,
+    #FFFFFF 0%,
+    #FF0000 50%,
+    #FFFFFF 100%);
+  /* Opera 11.10+ */
+  color: -ms-linear-gradient(top,
+    #FFFFFF 0%,
+    #FF0000 50%,
+    #FFFFFF 100%);
+  /* IE10+ */
+  color: linear-gradient(to bottom,
+    #FFFFFF 0%,
+    #FF0000 50%,
+    #FFFFFF 100%);
+  border-color: #FF0000;
+  border-style: solid;
+  border-width: 2px;
 }
 
-.item.red .card {
-  color: #f94a7a;
+.item.orange .card {
+  outline: 0;
+  color: -moz-linear-gradient(top,
+    #FFFFFF 0%,
+    #FF7F00 50%,
+    #FFFFFF 100%);
+  /* FF3.6+ */
+  color: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%, #FFFFFF),
+    color-stop(50%, #FF7F00),
+    color-stop(100%, #FFFFFF));
+  /* Chrome,Safari4+ */
+  color: -webkit-linear-gradient(top,
+    #FFFFFF 0%,
+    #FF7F00 50%,
+    #FFFFFF 100%);
+  /* Chrome10+,Safari5.1+ */
+  color: -o-linear-gradient(top,
+    #FFFFFF 0%,
+    #FF7F00 50%,
+    #FFFFFF 100%);
+  /* Opera 11.10+ */
+  color: -ms-linear-gradient(top,
+    #FFFFFF 0%,
+    #FF7F00 50%,
+    #FFFFFF 100%);
+  /* IE10+ */
+  color: linear-gradient(to bottom,
+    #FFFFFF 0%,
+    #FF7F00 50%,
+    #FFFFFF 100%);
+  border-color: #FF7F00;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.item.yellow .card {
+  outline: 0;
+  color: -moz-linear-gradient(top,
+    #FFFFFF 0%,
+    #FFFF00 50%,
+    #FFFFFF 100%);
+  /* FF3.6+ */
+  color: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%, #FFFFFF),
+    color-stop(50%, #FFFF00),
+    color-stop(100%, #FFFFFF));
+  /* Chrome,Safari4+ */
+  color: -webkit-linear-gradient(top,
+    #FFFFFF 0%,
+    #FFFF00 50%,
+    #FFFFFF 100%);
+  /* Chrome10+,Safari5.1+ */
+  color: -o-linear-gradient(top,
+    #FFFFFF 0%,
+    #FFFF00 50%,
+    #FFFFFF 100%);
+  /* Opera 11.10+ */
+  color: -ms-linear-gradient(top,
+    #FFFFFF 0%,
+    #FFFF00 50%,
+    #FFFFFF 100%);
+  /* IE10+ */
+  color: linear-gradient(to bottom,
+    #FFFFFF 0%,
+    #FFFF00 50%,
+    #FFFFFF 100%);
+  border-color: #FFFF00;
+  border-style: solid;
+  border-width: 2px;
 }
 
 .item.green .card {
-  color: #2ac06d;
+  outline: 0;
+  color: -moz-linear-gradient(top,
+    #FFFFFF 0%,
+    #00FF00 50%,
+    #FFFFFF 100%);
+  /* FF3.6+ */
+  color: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%, #FFFFFF),
+    color-stop(50%, #00FF00),
+    color-stop(100%, #FFFFFF));
+  /* Chrome,Safari4+ */
+  color: -webkit-linear-gradient(top,
+    #FFFFFF 0%,
+    #00FF00 50%,
+    #FFFFFF 100%);
+  /* Chrome10+,Safari5.1+ */
+  color: -o-linear-gradient(top,
+    #FFFFFF 0%,
+    #00FF00 50%,
+    #FFFFFF 100%);
+  /* Opera 11.10+ */
+  color: -ms-linear-gradient(top,
+    #FFFFFF 0%,
+    #00FF00 50%,
+    #FFFFFF 100%);
+  /* IE10+ */
+  color: linear-gradient(to bottom,
+    #FFFFFF 0%,
+    #00FF00 50%,
+    #FFFFFF 100%);
+  border-color: #00FF00;
+  border-style: solid;
+  border-width: 2px;
 }
 
 .item.blue .card {
-  color: #4A9FF9;
+  outline: 0;
+  color: -moz-linear-gradient(top,
+    #FFFFFF 0%,
+    #0000FF 50%,
+    #FFFFFF 100%);
+  /* FF3.6+ */
+  color: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%, #FFFFFF),
+    color-stop(50%, #0000FF),
+    color-stop(100%, #FFFFFF));
+  /* Chrome,Safari4+ */
+  color: -webkit-linear-gradient(top,
+    #FFFFFF 0%,
+    #0000FF 50%,
+    #FFFFFF 100%);
+  /* Chrome10+,Safari5.1+ */
+  color: -o-linear-gradient(top,
+    #FFFFFF 0%,
+    #0000FF 50%,
+    #FFFFFF 100%);
+  /* Opera 11.10+ */
+  color: -ms-linear-gradient(top,
+    #FFFFFF 0%,
+    #0000FF 50%,
+    #FFFFFF 100%);
+  /* IE10+ */
+  color: linear-gradient(to bottom,
+    #FFFFFF 0%,
+    #0000FF 50%,
+    #FFFFFF 100%);
+  border-color: #0000FF;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.item.purple .card {
+  outline: 0;
+  color: -moz-linear-gradient(top,
+    #FFFFFF 0%,
+    #9400D3 50%,
+    #FFFFFF 100%);
+  /* FF3.6+ */
+  color: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%, #FFFFFF),
+    color-stop(50%, #9400D3),
+    color-stop(100%, #FFFFFF));
+  /* Chrome,Safari4+ */
+  color: -webkit-linear-gradient(top,
+    #FFFFFF 0%,
+    #9400D3 50%,
+    #FFFFFF 100%);
+  /* Chrome10+,Safari5.1+ */
+  color: -o-linear-gradient(top,
+    #FFFFFF 0%,
+    #9400D3 50%,
+    #FFFFFF 100%);
+  /* Opera 11.10+ */
+  color: -ms-linear-gradient(top,
+    #FFFFFF 0%,
+    #9400D3 50%,
+    #FFFFFF 100%);
+  /* IE10+ */
+  color: linear-gradient(to bottom,
+    #FFFFFF 0%,
+    #9400D3 50%,
+    #FFFFFF 100%);
+  border-color: #9400D3;
+  border-style: solid;
+  border-width: 2px;
 }
 
 .item.white .card {
-  color: #fff;
+  color: white;
 }
 
 .card-id {

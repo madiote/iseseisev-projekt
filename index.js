@@ -1,5 +1,4 @@
 /* jshint esversion: 6 */
-
 document.addEventListener('DOMContentLoaded', function () {
 
   // Default options
@@ -11,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
   let demo = document.querySelector('.grid-demo');
   let gridElement = demo.querySelector('.grid');
   let addItemsElement = demo.querySelector('.add-more-items');
-  let filterOptions = ['red', 'blue', 'green', 'white'];
+  let filterOptions = ['red', 'orange', 'yellow', 'blue', 'green', 'purple', 'white'];
+
   let uuid = 0;
 
   //
