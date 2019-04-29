@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let layoutField = demo.querySelector('.layout-field');
   let addItemsElement = demo.querySelector('.add-more-items');
   let characters = 'abcdefghijklmnopqrstuvwxyz';
-  let filterOptions = ['red', 'blue', 'green'];
+  let filterOptions = ['red', 'blue', 'green', 'white'];
   let dragOrder = [];
   let uuid = 0;
   let filterFieldValue;

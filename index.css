@@ -127,6 +127,10 @@
   color: #4A9FF9;
 }
 
+.item.white .card {
+  color: #fff;
+}
+
 .card-id {
   position: absolute;
   left: 7px;
