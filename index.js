@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     grid._settings.layout = {
       horizontal: false,
       alignRight: false,
-      alignBottom: true,
+      alignBottom: false,
       fillGaps: true
     };
     grid.layout();
@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="item h' + height + ' w' + width + ' ' + color + '" data-id="' + id + '" data-color="' + color + '" data-title="' + title + '">' +
         '<div class="item-content">' +
         '<div class="card">' +
-        '<div class="card-id">' + id + '</div>' +
-        '<div class="card-title">' + title + '</div>' +
+        '<div class="card-id"></div>' +
+        '<div class="card-title"></div>' +
         '</div>' +
         '</div>' +
         '</div>';
