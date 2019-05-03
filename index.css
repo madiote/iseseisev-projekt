@@ -1,18 +1,14 @@
 /* demo-grid.css */
 /* Controls */
 
-/* ASJAD MIDA KAREN TAHAB VÕIBOLLA VEEL LISADA AGA EI OSKA VEEL*/
-/* BORDER https://codepen.io/unnegative/pen/dVwYBq */
-/* TEXT https://w3bits.com/rainbow-text/ */
-
-.rainbow-box {
-  border: 10px solid transparent;
-  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-  border-image-slice: 1;
-  height: 1260px;
-  margin: 20px auto;
-  padding: 20px 20px;
-  width: 1000px;
+.rainbow-text {
+  /* https://w3bits.com/rainbow-text/ */
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
 .controls {
@@ -128,7 +124,19 @@
   transition: all 0.2s ease-out;
 }
 
+.rainbow-box {
+  /* https://codepen.io/unnegative/pen/dVwYBq */
+  border: 10px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+  height: 1260px;
+  margin: 20px auto;
+  padding: 20px 20px;
+  width: 1000px;
+}
+
 .item.red .card {
+  /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
     #FFFFFF 0%,
     #FF0000 50%,
@@ -162,6 +170,7 @@
 }
 
 .item.orange .card {
+  /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
     #FFFFFF 0%,
     #FF7F00 50%,
@@ -195,6 +204,7 @@
 }
 
 .item.yellow .card {
+  /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
     #FFFFFF 0%,
     #FFFF00 50%,
@@ -228,6 +238,7 @@
 }
 
 .item.green .card {
+  /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
     #FFFFFF 0%,
     #00FF00 50%,
@@ -261,6 +272,7 @@
 }
 
 .item.blue .card {
+  /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
     #FFFFFF 0%,
     #0000FF 50%,
@@ -294,6 +306,7 @@
 }
 
 .item.purple .card {
+  /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
     #FFFFFF 0%,
     #9400D3 50%,
@@ -383,8 +396,6 @@
   margin-right: 10px;
   font-size: 24px;
 }
-
-
 
 /* Icons in the selector */
 /* fallback */
@@ -781,7 +792,7 @@ section h4 {
 
 .section-title {
   color: #3e3e3e;
-  font-size: 26px;
+  font-size: 40px;
   font-weight: 700;
   margin: 40px 0;
   letter-spacing: 2px;
