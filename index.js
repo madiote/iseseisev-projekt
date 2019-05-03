@@ -1,6 +1,10 @@
 /* jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', function () {
 
+  // Game options
+  const rows = 10;
+  const columns = 8;
+
   // Default options
   Muuri.defaultOptions.dragAxis = 'x';
 
@@ -10,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let demo = document.querySelector('.grid-demo');
   let gridElement = demo.querySelector('.grid');
   let addItemsElement = demo.querySelector('.add-more-items');
-  let filterOptions = ['red', 'orange', 'yellow', 'blue', 'green', 'purple', 'white'];
+  let filterOptions = ['red', 'orange', 'yellow', 'blue', 'green', 'purple'];
 
   let uuid = 0;
 
@@ -33,8 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function initGrid() {
     let dragCounter = 0;
+    // Two rows initially
+    let initItems = generateARow();
+    initItems = initItems.concat(generateARow());
+
     grid = new Muuri(gridElement, {
-        items: generateElements(6),
+        items: initItems,
         layoutDuration: 400,
         layoutEasing: 'ease',
         dragEnabled: true,
@@ -62,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function addItems() {
     // Generate new elements.
-    let newElems = generateElements(5);
+    let newElems = generateARow();
 
     // Add the elements to the grid.
     let newItems = grid.add(newElems);
@@ -89,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
       horizontal: false,
       alignRight: false,
       alignBottom: false,
-      fillGaps: true
+      fillGaps: false
     };
     grid.layout();
   }
@@ -105,7 +113,40 @@ document.addEventListener('DOMContentLoaded', function () {
       let id = ++uuid;
       let color = getRandomItem(filterOptions);
       let title = "";
-      let width = Math.floor(Math.random() * 4) + 1;
+      let width = generateBlockWidth();
+      let height = 1;
+      let itemElem = document.createElement('div');
+      let itemTemplate = '' +
+        '<div class="item h' + height + ' w' + width + ' ' + color + '" data-id="' + id + '" data-color="' + color + '" data-title="' + title + '">' +
+        '<div class="item-content">' +
+        '<div class="card">' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+
+      itemElem.innerHTML = itemTemplate;
+      ret.push(itemElem.firstChild);
+
+    }
+    return ret;
+  }
+
+  function generateSpecificElements(blocks) {
+    let ret = [];
+    for (let i = 0; i < blocks.length; i++) {
+      let color;
+      let width;
+
+      if (blocks[i] != 0) {
+        color = getRandomItem(filterOptions);
+        width = blocks[i];
+      } else {
+        color = "white";
+        width = 1;
+      }
+
+      let id = ++uuid;
+      let title = "";
       let height = 1;
       let itemElem = document.createElement('div');
       let itemTemplate = '' +
@@ -129,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateIndices() {
     grid.getItems().forEach(function (item, i) {
-      item.getElement().setAttribute('data-id', i + 1); 
+      item.getElement().setAttribute('data-id', i + 1);
     });
   }
 
@@ -149,6 +190,46 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       return element.closest(selector);
     }
+  }
+
+  function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * ((max + 1) - min)) + min;
+  }
+
+  function generateARow() {
+    let sum = 0;
+    let sumWithZeroes = 0;
+    let blocksPerRow = getRandomInteger(2, 5);
+    let blockNumbers = new Array(columns).fill(0); // generate zero-blocks by columns
+    for (let i = 0; i < blocksPerRow; i++) { // generate blocks
+      let block = getRandomInteger(1, 4); // generate a block
+
+      if ((sum + block) < columns) { // add if it fits
+        let randomPos = getRandomInteger(0, columns);
+        blockNumbers[randomPos] = block; // add to random position
+        sum += blockNumbers[randomPos]; // append to sum to prevent overflow
+      }
+    }
+
+    for (let i = 0; i < blockNumbers.length; i++) { // count the numbers including zeroes
+      sumWithZeroes += blockNumbers[i];
+
+      if(blockNumbers[i] == 0){ // if it is zero, append 1
+        sumWithZeroes++;
+      }
+    }
+
+    for (var i = blockNumbers.length - 1; i >= 0; i--) { // remove excessive zeroes - https://stackoverflow.com/a/5767335
+      if (sumWithZeroes > columns && blockNumbers[i] === 0) {
+        blockNumbers.splice(i, 1);
+        sumWithZeroes--; // the variable loses its meaning after this but it is not needed afterwards anyway
+      }
+    }
+
+    console.log("Row: " + blockNumbers + " Total blocks: " + sum);
+    let blockElements = generateSpecificElements(blockNumbers);
+    console.log(blockElements);
+    return blockElements;
   }
 
   //
