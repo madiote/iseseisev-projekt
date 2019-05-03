@@ -26,14 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function initDemo() {
     initGrid();
     changeLayout();
-
-    // Add/remove items bindings.
-    addItemsElement.addEventListener('click', addItems);
-    gridElement.addEventListener('click', function (e) {
-      if (elementMatches(e.target, '.card-remove, .card-remove i')) {
-        removeItem(e);
-      }
-    });
   }
 
   function initGrid() {
