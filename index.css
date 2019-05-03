@@ -119,10 +119,10 @@
   border: 10px solid transparent;
   border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
   border-image-slice: 1;
-  height: 1260px;
+  height: 80%;
   margin: 20px auto;
-  padding: 20px 20px;
-  width: 1000px;
+  padding: 3vw;
+  width: 75%;
 }
 
 /* Block design */
@@ -456,7 +456,7 @@ body {
   -webkit-text-fill-color: transparent;
   text-align: center;
   letter-spacing: 0.3vw;
-  font-size: 1.5vw;
+  font-size: 1.7vw;
 }
 
 /* Clearfix */
