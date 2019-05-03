@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let dragCounter = 0;
 
     grid = new Muuri(gridElement, {
-        items: generateElements(20),
+        items: generateElements(6),
         layoutDuration: 400,
         layoutEasing: 'ease',
         dragEnabled: true,

@@ -80,13 +80,16 @@
   z-index: 0;
 }
 
-.item.h2 {
-  height: 220px;
-  line-height: 220px;
-}
-
 .item.w2 {
   width: 220px;
+}
+
+.item.w3 {
+  width: 330px;
+}
+
+.item.w4 {
+  width: 440px;
 }
 
 .item-content {
