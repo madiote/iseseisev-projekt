@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let id = ++uuid;
       let color = getRandomItem(filterOptions);
       let title = "";
-      let width = Math.floor(Math.random() * 2) + 1;
+      let width = Math.floor(Math.random() * 4) + 1;
       let height = 1;
       let itemElem = document.createElement('div');
       let itemTemplate = '' +

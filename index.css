@@ -120,7 +120,7 @@
   border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
   border-image-slice: 1;
   height: 1260px;
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 3vw;
   width: 1050px;
 }
