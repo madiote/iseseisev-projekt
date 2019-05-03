@@ -125,6 +125,8 @@
   width: 1000px;
 }
 
+/* Block design */
+
 .item.red .card {
   /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
@@ -453,7 +455,8 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 0.3vw;
+  font-size: 1.5vw;
 }
 
 /* Clearfix */
@@ -583,7 +586,6 @@ footer {
   margin: 0 auto;
   max-width: 940px;
   text-align: center;
-  border-top: 2px solid #e5e5e5;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -594,8 +596,8 @@ footer {
 .section-title {
   margin: 30px auto;
   color: #1c1493;
-  font-size: 80px;
-  letter-spacing: 30px;
+  font-size: 5vw;
+  letter-spacing: 2vw;
   text-transform: uppercase;
   text-align: center;
 }
