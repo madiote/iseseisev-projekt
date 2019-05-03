@@ -1,16 +1,6 @@
 /* demo-grid.css */
 /* Controls */
 
-.rainbow-text {
-  /* https://w3bits.com/rainbow-text/ */
-  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-  letter-spacing: 2px;
-}
-
 .controls {
   margin: 30px -10px;
 }
@@ -456,18 +446,14 @@ body {
   color: #6e6e6e;
 }
 
-a {
-  color: #3396FF;
-  text-decoration: none;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-
-a:hover {
-  color: #FF4BD8;
+.rainbow-text {
+  /* https://w3bits.com/rainbow-text/ */
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
 /* Clearfix */
@@ -590,147 +576,6 @@ select.form-control::-ms-expand {
   border-color: #4a9ff9;
 }
 
-/* Header */
-
-header {
-  margin: 30px auto;
-  max-width: 940px;
-}
-
-header .logo {
-  max-width: 240px;
-  margin: 60px auto 60px auto;
-}
-
-header .logo svg {
-  width: 100%;
-  height: 100%;
-}
-
-header h1 {
-  display: none;
-}
-
-header h2 {
-  text-align: center;
-  font-size: 24px;
-  line-height: 1.5;
-  font-weight: 400;
-  max-width: 940px;
-  margin: 0 auto;
-  color: #6e6e6e;
-}
-
-header h2>span {
-  display: block;
-  font-size: 18px;
-  color: #aaa;
-  margin-top: 3px;
-}
-
-header h2>span>i {
-  margin: 0 10px;
-  color: #ccc;
-}
-
-header aside {
-  color: #bbb;
-  font-size: 15px;
-  margin-top: 5px;
-  font-style: italic;
-  text-align: center;
-}
-
-header nav {
-  text-align: center;
-}
-
-header nav a {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  padding: 20px;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-header nav a i {
-  display: block;
-  position: absolute;
-  height: 2px;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background-color: #FF4BD8;
-  opacity: 0;
-  z-index: 2;
-  -moz-transform: scale(0, 1);
-  -webkit-transform: scale(0, 1);
-  -o-transform: scale(0, 1);
-  -ms-transform: scale(0, 1);
-  transform: scale(0, 1);
-  -webkit-transition: -webkit-transform 0.2s ease-out, opacity 0s ease 0.2s;
-  -moz-transition: -moz-transform 0.2s ease-out, opacity 0s ease 0.2s;
-  -ms-transition: -ms-transform 0.2s ease-out, opacity 0s ease 0.2s;
-  -o-transition: -o-transform 0.2s ease-out, opacity 0s ease 0.2s;
-  transition: transform 0.2s ease-out, opacity 0s ease 0.2s;
-}
-
-header nav a:hover i {
-  opacity: 1;
-  -moz-transform: scale(1, 1);
-  -webkit-transform: scale(1, 1);
-  -o-transform: scale(1, 1);
-  -ms-transform: scale(1, 1);
-  transform: scale(1, 1);
-  -webkit-transition: -webkit-transform 0.2s ease-out, opacity 0s ease 0s;
-  -moz-transition: -moz-transform 0.2s ease-out, opacity 0s ease 0s;
-  -ms-transition: -ms-transform 0.2s ease-out, opacity 0s ease 0s;
-  -o-transition: -o-transform 0.2s ease-out, opacity 0s ease 0s;
-  transition: transform 0.2s ease-out, opacity 0s ease 0s;
-}
-
-@media (max-width: 600px) {
-  header {
-    margin-bottom: 0;
-  }
-
-  header h2 {
-    font-size: 21px;
-  }
-
-  header h2>span {
-    margin-top: 20px;
-  }
-
-  header h2>span>i {
-    display: none;
-  }
-
-  header h2>span>span {
-    display: block;
-  }
-
-  header nav {
-    margin-top: 20px;
-    border-bottom: 0;
-    border-top: 1px solid #e5e5e5;
-  }
-
-  header nav a {
-    display: block;
-    vertical-align: top;
-    padding: 10px 20px;
-    border-bottom: 1px solid #e5e5e5;
-  }
-
-  header nav a i {
-    bottom: -1px;
-    left: 0;
-    right: 0;
-  }
-}
 
 /* Footer */
 
@@ -743,78 +588,16 @@ footer {
   padding-bottom: 30px;
 }
 
-footer p {
-  margin: 0;
-}
-
-footer .credits {
-  color: #aaa;
-  margin-bottom: 5px;
-  font-style: italic;
-}
-
-footer .copyright i {
-  font-size: 24px;
-  height: 27px;
-  line-height: 32px;
-  display: inline-block;
-  vertical-align: top;
-}
-
 /* Sections */
-
-section {
-  margin: 60px auto;
-  padding-top: 0;
-  max-width: 940px;
-  border-top: 2px solid #e5e5e5;
-  text-align: left;
-}
-
-section.demo {
-  margin-top: 30px;
-}
-
-section h4 {
-  margin: 30px 0 15px 0;
-  font-weight: 500;
-  font-size: 20px;
-  color: #3e3e3e;
-}
-
-@media (max-width: 600px) {
-  section.demo {
-    border-top: 0;
-  }
-}
-
-/* Section titles */
+/* Section title */
 
 .section-title {
-  color: #3e3e3e;
-  font-size: 40px;
-  font-weight: 700;
-  margin: 40px 0;
-  letter-spacing: 2px;
+  margin: 30px auto;
+  color: #1c1493;
+  font-size: 80px;
+  letter-spacing: 30px;
   text-transform: uppercase;
   text-align: center;
-}
-
-.section-title>span {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.section-title>span:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 10px;
-  bottom: 0;
-  right: 10px;
-  height: 2px;
-  background: #3e3e3e;
 }
 
 /* Feature list */
@@ -860,17 +643,6 @@ section h4 {
     font-size: 24px;
     line-height: inherit;
   }
-}
-
-/* Author */
-
-.author {
-  margin: 60px 0;
-  font-weight: 500;
-  font-size: 20px;
-  color: #3e3e3e;
-  font-style: italic;
-  text-align: center;
 }
 
 /* 由 demo-grid.css 取出再覆蓋執行一次 */
