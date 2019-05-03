@@ -2,21 +2,21 @@
 /* Controls */
 
 .controls {
-  margin: 30px -10px;
+  margin: 1.875em -0.625em;
 }
 
 .control {
   position: relative;
   float: left;
   width: 25%;
-  padding: 0 10px;
+  padding: 0 0.625em;
 }
 
 @media (max-width: 600px) {
   .control {
     float: none;
     width: auto;
-    margin: 0 0 15px 0;
+    margin: 0 0 0.938em 0;
   }
 
   .control.layout {
@@ -26,11 +26,11 @@
 
 .control-icon {
   position: absolute;
-  left: 10px;
+  left: 0.625em;
   top: 0;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 2.5em;
+  height: 2.5em;
+  line-height: 2.5em;
   text-align: center;
   z-index: 2;
   pointer-events: none;
@@ -38,7 +38,7 @@
 
 .control-field {
   position: relative;
-  padding-left: 40px;
+  padding-left: 2.5em;
   z-index: 1;
 }
 
@@ -46,8 +46,8 @@
 
 .grid {
   position: relative;
-  max-width: 960px;
-  margin: 0 -10px;
+  max-width: 60em;
+  margin: 0 -0.625em;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
@@ -55,10 +55,10 @@
 
 .item {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  margin: 10px;
+  width: 6.25em;
+  height: 6.25em;
+  line-height: 6.25em;
+  margin: 0.625em;
   z-index: 1;
   will-change: transform;
 }
@@ -81,15 +81,15 @@
 }
 
 .item.w2 {
-  width: 220px;
+  width: 13.75em;
 }
 
 .item.w3 {
-  width: 330px;
+  width: 20.625em;
 }
 
 .item.w4 {
-  width: 440px;
+  width: 27.5em;
 }
 
 .item-content {
@@ -105,11 +105,11 @@
   right: 0;
   bottom: 0;
   text-align: center;
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 300;
-  border: 2px solid;
+  border: 0.125em solid;
   color: #333;
-  border-radius: 4px;
+  border-radius: 0.25em;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
@@ -119,13 +119,13 @@
 
 .rainbow-box {
   /* https://codepen.io/unnegative/pen/dVwYBq */
-  border: 10px solid transparent;
+  border: 0.625em solid transparent;
   border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
   border-image-slice: 1;
-  height: 1260px;
-  margin: 40px auto;
+  height: 78.75em;
+  margin: 2.5em auto;
   padding: 3vw;
-  width: 1050px;
+  width: 65.625em;
 }
 
 /* Block design */
@@ -340,12 +340,12 @@
 
 .card-id {
   position: absolute;
-  left: 7px;
+  left: 0.438em;
   top: 0;
-  height: 30px;
-  line-height: 30px;
+  height: 1.875em;
+  line-height: 1.875em;
   text-align: left;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 400;
 }
 
@@ -353,11 +353,11 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+  width: 1.875em;
+  height: 1.875em;
+  line-height: 1.875em;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: 400;
   cursor: pointer;
   -moz-transform: scale(0);
@@ -383,13 +383,13 @@
 /* Grid Footer */
 
 .grid-footer {
-  margin: 60px 0;
+  margin: 3.75em 0;
   text-align: center;
 }
 
 .grid-footer .btn .material-icons {
-  margin-right: 10px;
-  font-size: 24px;
+  margin-right: 0.625em;
+  font-size: 1.5em;
 }
 
 /* Icons in the selector */
@@ -405,7 +405,7 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  font-size: 1.5em;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -445,9 +445,9 @@ html.dragging body {
 body {
   position: relative;
   font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.125em;
   line-height: 1.5;
-  margin: 0 20px;
+  margin: 0 1.25em;
   color: #6e6e6e;
 }
 
@@ -460,6 +460,7 @@ body {
   text-align: center;
   letter-spacing: 0.3vw;
   font-size: 1.7vw;
+  margin: 0 auto;
 }
 
 /* Clearfix */
@@ -492,11 +493,11 @@ body {
   margin: 0;
   border: 0;
   outline: 0;
-  padding: 0px 15px;
-  font-size: 16px;
+  padding: 0em 0.938em;
+  font-size: 1em;
   font-weight: 400;
-  line-height: 40px;
-  height: 40px;
+  line-height: 2.5em;
+  height: 2.5em;
   text-align: center;
   white-space: nowrap;
   background: #4a9ff9;
@@ -508,7 +509,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border-radius: 3px;
+  border-radius: 0.188em;
 }
 
 .btn:focus,
@@ -542,14 +543,14 @@ body {
 .form-control {
   display: block;
   width: 100%;
-  height: 40px;
-  padding: 5px 15px;
-  font-size: 16px;
-  line-height: 26px;
+  height: 2.5em;
+  padding: 0.313em 0.938em;
+  font-size: 1em;
+  line-height: 1.625em;
   color: inherit;
   background: #fff;
-  border: 2px solid #e5e5e5;
-  border-radius: 4px;
+  border: 0.125em solid #e5e5e5;
+  border-radius: 0.25em;
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
@@ -557,7 +558,7 @@ body {
 }
 
 select.form-control {
-  padding-right: 40px;
+  padding-right: 2.5em;
   cursor: pointer;
 }
 
@@ -567,11 +568,11 @@ select.form-control::-ms-expand {
 
 .select-arrow {
   position: absolute;
-  right: 10px;
+  right: 0.625em;
   top: 0;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 2.5em;
+  height: 2.5em;
+  line-height: 2.5em;
   text-align: center;
   z-index: 2;
   pointer-events: none;
@@ -587,17 +588,17 @@ select.form-control::-ms-expand {
 
 footer {
   margin: 0 auto;
-  max-width: 940px;
+  max-width: 58.75em;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 1.875em;
+  padding-bottom: 1.875em;
 }
 
 /* Sections */
 /* Section title */
 
 .section-title {
-  margin: 30px auto;
+  margin: 1em auto;
   color: #1c1493;
   font-size: 5vw;
   letter-spacing: 2vw;
@@ -615,26 +616,26 @@ footer {
 
 .feature-list-item {
   position: relative;
-  padding-left: 80px;
-  margin: 30px 0;
+  padding-left: 5em;
+  margin: 1.875em 0;
   overflow: hidden;
 }
 
 .feature-list-icon {
   display: block;
   float: left;
-  margin-left: -80px;
-  width: 80px;
-  font-size: 48px;
-  line-height: 48px;
+  margin-left: -5em;
+  width: 5em;
+  font-size: 3em;
+  line-height: 3em;
   text-align: left;
   color: #3396FF;
 }
 
 .feature-list-text h4 {
-  margin: 0 0 15px 0;
+  margin: 0 0 0.938em 0;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.25em;
 }
 
 @media (max-width: 600px) {
@@ -643,9 +644,9 @@ footer {
   }
 
   .feature-list-icon {
-    margin: -4px 10px 0 0;
-    width: 24px;
-    font-size: 24px;
+    margin: -0.25em 0.625em 0 0;
+    width: 1.5em;
+    font-size: 1.5em;
     line-height: inherit;
   }
 }
@@ -653,6 +654,6 @@ footer {
 /* 由 demo-grid.css 取出再覆蓋執行一次 */
 .control-field {
   position: relative;
-  padding-left: 40px;
+  padding-left: 2.5em;
   z-index: 1;
 }
