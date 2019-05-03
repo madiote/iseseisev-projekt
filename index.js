@@ -42,8 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
         dragSortInterval: 50,
         dragContainer: document.body,
         dragStartPredicate: function (item, event) {
-          let isRemoveAction = elementMatches(event.target, '.card-remove, .card-remove i');
-          return true && !isRemoveAction ? Muuri.ItemDrag.defaultStartPredicate(item, event) : false;
+          if(!elementMatches(event.target.parentNode.parentNode, '.white')){
+            let isRemoveAction = elementMatches(event.target, '.card-remove, .card-remove i');
+            return true && !isRemoveAction ? Muuri.ItemDrag.defaultStartPredicate(item, event) : false;
+          }
+          
         },
         dragReleaseDuration: 400,
         dragReleseEasing: 'ease'
@@ -229,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    console.log("Row: " + blockNumbers + " Total blocks: " + sum);
+    console.log("Blocks: " + blockNumbers + " Covering: " + sum + "/" + columns);
     let blockElements = generateSpecificElements(blockNumbers);
     console.log(blockElements);
     return blockElements;
