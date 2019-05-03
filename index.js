@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Game options
   const rows = 10;
   const columns = 8;
+  let currentRow = 0;
 
   // Default options
   Muuri.defaultOptions.dragAxis = 'x';
@@ -63,20 +64,28 @@ document.addEventListener('DOMContentLoaded', function () {
         if (--dragCounter < 1) {
           docElem.classList.remove('dragging');
         }
+        addItems();
       })
       .on('move', updateIndices)
       .on('sort', updateIndices);
   }
 
   function addItems() {
-    // Generate new elements.
-    let newElems = generateARow();
+    if(currentRow < rows - 1){
+      // Generate new elements.
+      let newElems = generateARow();
 
-    // Add the elements to the grid.
-    let newItems = grid.add(newElems);
+      // Add the elements to the grid.
+      let newItems = grid.add(newElems);
 
-    // Update UI indices.
-    updateIndices();
+      // Update UI indices.
+      updateIndices();
+    }
+    else {
+      window.alert("Mäng läbi!");
+      location.reload();
+    }
+
   }
 
   function removeItem(e) {
@@ -197,6 +206,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function generateARow() {
+    currentRow++;
+
     let sum = 0;
     let sumWithZeroes = 0;
     let blocksPerRow = getRandomInteger(2, 5);
