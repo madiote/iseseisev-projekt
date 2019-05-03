@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
   //
 
   function initDemo() {
-
     initGrid();
     changeLayout();
 
@@ -30,13 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
         removeItem(e);
       }
     });
-
   }
 
   function initGrid() {
-
     let dragCounter = 0;
-
     grid = new Muuri(gridElement, {
         items: generateElements(6),
         layoutDuration: 400,
@@ -62,11 +58,9 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .on('move', updateIndices)
       .on('sort', updateIndices);
-
   }
 
   function addItems() {
-
     // Generate new elements.
     let newElems = generateElements(5);
 
@@ -78,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function removeItem(e) {
-
     let elem = elementClosest(e.target, '.item');
     grid.hide(elem, {
       onFinish: function (items) {
@@ -89,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
     updateIndices();
-
   }
 
   function changeLayout() {
@@ -100,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
       fillGaps: true
     };
     grid.layout();
-
   }
 
   //
@@ -108,9 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //
 
   function generateElements(amount) {
-
     let ret = [];
-
     for (let i = 0, len = amount || 1; i < amount; i++) {
 
       let id = ++uuid;
@@ -123,8 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="item h' + height + ' w' + width + ' ' + color + '" data-id="' + id + '" data-color="' + color + '" data-title="' + title + '">' +
         '<div class="item-content">' +
         '<div class="card">' +
-        '<div class="card-id"></div>' +
-        '<div class="card-title"></div>' +
         '</div>' +
         '</div>' +
         '</div>';
@@ -133,51 +120,25 @@ document.addEventListener('DOMContentLoaded', function () {
       ret.push(itemElem.firstChild);
 
     }
-
     return ret;
-
   }
 
   function getRandomItem(collection) {
-
     return collection[Math.floor(Math.random() * collection.length)];
-
-  }
-
-  function compareItemTitle(a, b) {
-
-    let aVal = a.getElement().getAttribute('data-title') || '';
-    let bVal = b.getElement().getAttribute('data-title') || '';
-    return aVal < bVal ? -1 : aVal > bVal ? 1 : 0;
-
-  }
-
-  function compareItemColor(a, b) {
-
-    let aVal = a.getElement().getAttribute('data-color') || '';
-    let bVal = b.getElement().getAttribute('data-color') || '';
-    return aVal < bVal ? -1 : aVal > bVal ? 1 : compareItemTitle(a, b);
-
   }
 
   function updateIndices() {
-
     grid.getItems().forEach(function (item, i) {
-      item.getElement().setAttribute('data-id', i + 1);
-      item.getElement().querySelector('.card-id').innerHTML = i + 1;
+      item.getElement().setAttribute('data-id', i + 1); 
     });
-
   }
 
   function elementMatches(element, selector) {
-
     let p = Element.prototype;
     return (p.matches || p.matchesSelector || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || p.oMatchesSelector).call(element, selector);
-
   }
 
   function elementClosest(element, selector) {
-
     if (window.Element && !Element.prototype.closest) {
       let isMatch = elementMatches(element, selector);
       while (!isMatch && element && element !== document) {
@@ -188,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       return element.closest(selector);
     }
-
   }
 
   //
