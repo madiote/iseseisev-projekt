@@ -117,12 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let color = getRandomItem(filterOptions);
       let title = "";
       let width;
-
-      if (color == "white")
-        width = 1;
-      else
-        width = Math.floor(Math.random() * 2) + 1;
-
+      width = Math.floor(Math.random() * 2) + 1;
       let height = 1;
       let itemElem = document.createElement('div');
       let itemTemplate = '' +
