@@ -12,7 +12,7 @@
 .item {
   position: absolute;
   width: 3vw;
-  height: 6vh;
+  height: 5vh;
   line-height: 6.25em;
   margin: 0.4vw;
   z-index: 1;
@@ -78,7 +78,7 @@
   border: 0.625em solid transparent;
   border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
   border-image-slice: 1;
-  height: 90vh;
+  height: 80vh;
   margin: 0.5em auto;
   padding: 3vw;
   width: 37vw;
