@@ -607,51 +607,6 @@ footer {
   text-align: center;
 }
 
-/* Feature list */
-
-.feature-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.feature-list-item {
-  position: relative;
-  padding-left: 5em;
-  margin: 1.875em 0;
-  overflow: hidden;
-}
-
-.feature-list-icon {
-  display: block;
-  float: left;
-  margin-left: -5em;
-  width: 5em;
-  font-size: 3em;
-  line-height: 3em;
-  text-align: left;
-  color: #3396FF;
-}
-
-.feature-list-text h4 {
-  margin: 0 0 0.938em 0;
-  font-weight: 500;
-  font-size: 1.25em;
-}
-
-@media (max-width: 600px) {
-  .feature-list-item {
-    padding-left: 0;
-  }
-
-  .feature-list-icon {
-    margin: -0.25em 0.625em 0 0;
-    width: 1.5em;
-    font-size: 1.5em;
-    line-height: inherit;
-  }
-}
-
 /* 由 demo-grid.css 取出再覆蓋執行一次 */
 .control-field {
   position: relative;
