@@ -1,16 +1,11 @@
 {
-    "short_name": "Karen",
-    "name": "Karen Minski",
+    "short_name": "JEWEL",
+    "name": "JEWELBLOCKS",
     "icons": [
         {
             "src": "/favicon.png",
             "type": "image/png",
-            "sizes": "192x192"
-        },
-        {
-            "src": "/karen.jpg",
-            "type": "image/jpg",
-            "sizes": "512x512"
+            "sizes": "208x208"
         }
     ],
     "start_url": "/",

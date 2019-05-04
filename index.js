@@ -110,31 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Generic helper functions
   //
 
-  function generateElements(amount) {
-    let ret = [];
-    for (let i = 0, len = amount || 1; i < amount; i++) {
-
-      let id = ++uuid;
-      let color = getRandomItem(filterOptions);
-      let title = "";
-      let width = generateBlockWidth();
-      let height = 1;
-      let itemElem = document.createElement('div');
-      let itemTemplate = '' +
-        '<div class="item h' + height + ' w' + width + ' ' + color + '" data-id="' + id + '" data-color="' + color + '" data-title="' + title + '">' +
-        '<div class="item-content">' +
-        '<div class="card">' +
-        '</div>' +
-        '</div>' +
-        '</div>';
-
-      itemElem.innerHTML = itemTemplate;
-      ret.push(itemElem.firstChild);
-
-    }
-    return ret;
-  }
-
   function generateSpecificElements(blocks) {
     let ret = [];
     for (let i = 0; i < blocks.length; i++) {
@@ -238,10 +213,20 @@ document.addEventListener('DOMContentLoaded', function () {
     return blockElements;
   }
 
+  function forceHttps() {
+    // Ensures that the Greeny page is loaded over HTTPS - https://stackoverflow.com/a/4597085
+    if (window.location.href.indexOf("greeny.cs.tlu.ee") != -1) {
+        if (location.protocol == 'http:') {
+            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+        }
+    }
+}
+
   //
   // Fire it up!
   //
 
+  forceHttps();
   initDemo();
 
 });
