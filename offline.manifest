@@ -1,4 +1,6 @@
 CACHE MANIFEST
+manifest.webmanifest
+favicon.png
 index.html
 index.js
 index.css
