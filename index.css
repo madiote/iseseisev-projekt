@@ -55,10 +55,10 @@
 
 .item {
   position: absolute;
-  width: 2em;
-  height: 2em;
+  width: 3vw;
+  height: 3vw;
   line-height: 6.25em;
-  margin: 0.4em;
+  margin: 0.4vw;
   z-index: 1;
   will-change: transform;
 }
@@ -81,15 +81,15 @@
 }
 
 .item.w2 {
-  width: 4.8em;
+  width: 6.8vw;
 }
 
 .item.w3 {
-  width: 7.6em;
+  width: 10.6vw;
 }
 
 .item.w4 {
-  width: 10.4em;
+  width: 14.4vw;
 }
 
 .item-content {
@@ -122,10 +122,10 @@
   border: 0.625em solid transparent;
   border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
   border-image-slice: 1;
-  height: 33em;
+  height: 42vw;
   margin: 0.5em auto;
   padding: 3vw;
-  width: 28em;
+  width: 37vw;
 }
 
 /* Block design */
