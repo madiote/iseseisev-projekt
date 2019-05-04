@@ -42,14 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
         dragSortInterval: 50,
         dragContainer: document.body,
         dragStartPredicate: function (item, event) {
-          if(!elementMatches(event.target.parentNode.parentNode, '.white')){
-            let isRemoveAction = elementMatches(event.target, '.card-remove, .card-remove i');
-            return true && !isRemoveAction ? Muuri.ItemDrag.defaultStartPredicate(item, event) : false;
+          if(event.deltaTime > 50 && !elementMatches(event.target.parentNode.parentNode, '.white')){
+            return Muuri.ItemDrag.defaultStartPredicate(item, event);
           }
-          
         },
         dragReleaseDuration: 400,
-        dragReleseEasing: 'ease'
+        dragReleaseEasing: 'ease'
       })
       .on('dragStart', function () {
         ++dragCounter;
@@ -66,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function addItems() {
-    if(currentRow < rows - 1){
+    if (currentRow < rows - 1) {
       // Generate new elements.
       let newElems = generateARow();
 
@@ -75,8 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Update UI indices.
       updateIndices();
-    }
-    else {
+    } else {
       window.alert("Mäng läbi!");
       location.reload();
     }
@@ -195,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let i = 0; i < blockNumbers.length; i++) { // count the numbers including zeroes
       sumWithZeroes += blockNumbers[i];
 
-      if(blockNumbers[i] == 0){ // if it is zero, append 1
+      if (blockNumbers[i] == 0) { // if it is zero, append 1
         sumWithZeroes++;
       }
     }
@@ -216,11 +213,11 @@ document.addEventListener('DOMContentLoaded', function () {
   function forceHttps() {
     // Ensures that the Greeny page is loaded over HTTPS - https://stackoverflow.com/a/4597085
     if (window.location.href.indexOf("greeny.cs.tlu.ee") != -1) {
-        if (location.protocol == 'http:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+      if (location.protocol == 'http:') {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+      }
     }
-}
+  }
 
   //
   // Fire it up!
