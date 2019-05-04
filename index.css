@@ -1,5 +1,4 @@
 /* Grid */
-
 .grid {
   position: relative;
   max-width: 60em;
@@ -11,8 +10,8 @@
 
 .item {
   position: absolute;
-  width: 3vw;
-  height: 5vh;
+  width: 6vw;
+  height: 6vh;
   line-height: 6.25em;
   margin: 0.4vw;
   z-index: 1;
@@ -37,15 +36,15 @@
 }
 
 .item.w2 {
-  width: 6.8vw;
+  width: 12.8vw;
 }
 
 .item.w3 {
-  width: 10.6vw;
+  width: 19.6vw;
 }
 
 .item.w4 {
-  width: 14.4vw;
+  width: 26.4vw;
 }
 
 .item-content {
@@ -78,10 +77,12 @@
   border: 0.625em solid transparent;
   border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
   border-image-slice: 1;
-  height: 80vh;
+  height: 90vh;
   margin: 0.5em auto;
-  padding: 3vw;
-  width: 37vw;
+  padding: 5vh 7.6vw;
+  width: 70vw;
+  background-image: linear-gradient(rgb(255, 255, 255) .1em, transparent .1em), linear-gradient(90deg, rgb(222, 226, 228) .1em, transparent .1em);
+  background-size: 6.8vw;
 }
 
 .card-id {
