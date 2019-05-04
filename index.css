@@ -55,10 +55,10 @@
 
 .item {
   position: absolute;
-  width: 6.25em;
-  height: 6.25em;
+  width: 2em;
+  height: 2em;
   line-height: 6.25em;
-  margin: 0.625em;
+  margin: 0.4em;
   z-index: 1;
   will-change: transform;
 }
@@ -81,15 +81,15 @@
 }
 
 .item.w2 {
-  width: 13.75em;
+  width: 4.8em;
 }
 
 .item.w3 {
-  width: 20.625em;
+  width: 7.2em;
 }
 
 .item.w4 {
-  width: 27.5em;
+  width: 9.6em;
 }
 
 .item-content {
@@ -122,10 +122,10 @@
   border: 0.625em solid transparent;
   border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
   border-image-slice: 1;
-  height: 78.75em;
-  margin: 2.5em auto;
+  height: 33em;
+  margin: 0.5em auto;
   padding: 3vw;
-  width: 65.625em;
+  width: 27em;
 }
 
 /* Block design */
@@ -459,7 +459,7 @@ body {
   -webkit-text-fill-color: transparent;
   text-align: center;
   letter-spacing: 0.3vw;
-  font-size: 1.7vw;
+  font-size: 1.3vw;
   margin: 0 auto;
 }
 
@@ -598,9 +598,10 @@ footer {
 /* Section title */
 
 .section-title {
-  margin: 1em auto;
+  margin: 0em auto;
   color: #1c1493;
-  font-size: 5vw;
+  font-size: 4vw;
+  padding: 0;
   letter-spacing: 2vw;
   text-transform: uppercase;
   text-align: center;
