@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dragSortInterval: 50,
         dragContainer: document.body,
         dragStartPredicate: function (item, event) {
-          if(event.deltaTime > 50 && !elementMatches(event.target.parentNode.parentNode, '.white')){
+          if (event.deltaTime > 50 && !elementMatches(event.target.parentNode.parentNode, '.white')) {
             return Muuri.ItemDrag.defaultStartPredicate(item, event);
           }
         },

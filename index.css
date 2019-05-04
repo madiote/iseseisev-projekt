@@ -81,6 +81,7 @@
   margin: 0.5em auto;
   padding: 5vh 7.6vw;
   width: 70vw;
+  /* https://codepen.io/naprirfan/pen/xEvRae */
   background-image: linear-gradient(rgb(255, 255, 255) .1em, transparent .1em), linear-gradient(90deg, rgb(222, 226, 228) .1em, transparent .1em);
   background-size: 6.8vw;
 }
