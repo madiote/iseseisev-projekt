@@ -57,9 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (--dragCounter < 1) {
           docElem.classList.remove('dragging');
         }
-        addItems();
       })
-      .on('move', updateIndices)
+      .on('move', addItems)
       .on('sort', updateIndices);
   }
 
@@ -74,8 +73,10 @@ document.addEventListener('DOMContentLoaded', function () {
       // Update UI indices.
       updateIndices();
     } else {
-      window.alert("Mäng läbi!");
-      location.reload();
+      setTimeout(function(){
+        window.alert("Mäng läbi!");
+        location.reload();
+      }, 1000);
     }
 
   }
