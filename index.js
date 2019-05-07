@@ -63,20 +63,20 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function addItems() {
-    if (currentRow < rows - 1) {
-      // Generate new elements.
-      let newElems = generateARow();
+    // Generate new elements.
+    let newElems = generateARow();
 
-      // Add the elements to the grid.
-      let newItems = grid.add(newElems);
+    // Add the elements to the grid.
+    let newItems = grid.add(newElems);
 
-      // Update UI indices.
-      updateIndices();
-    } else {
-      setTimeout(function(){
+    // Update UI indices.
+    updateIndices();
+
+    if (currentRow >= rows - 1) {
+      setTimeout(function () { // wait 2 sec for the last row to load
         window.alert("Mäng läbi!");
         location.reload();
-      }, 1000);
+      }, 2000);
     }
 
   }
