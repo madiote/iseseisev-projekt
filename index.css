@@ -384,6 +384,7 @@ body {
   border-color: #9400D3;
 }
 
-.item.white .card {
+.item.transparent .card {
   color: white;
+  opacity: 0;
 }

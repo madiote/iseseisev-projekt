@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
   let docElem = document.documentElement;
   let demo = document.querySelector('.grid-demo');
   let gridElement = demo.querySelector('.grid');
-  let addItemsElement = demo.querySelector('.add-more-items');
   let filterOptions = ['red', 'orange', 'yellow', 'blue', 'green', 'purple'];
 
   let uuid = 0;
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function initDemo() {
     initGrid();
-    changeLayout();
   }
 
   function initGrid() {
@@ -38,11 +36,17 @@ document.addEventListener('DOMContentLoaded', function () {
         items: initItems,
         layoutDuration: 400,
         layoutEasing: 'ease',
+        layout: {
+          horizontal: false,
+          alignRight: false,
+          alignBottom: false,
+          fillGaps: false
+        },
         dragEnabled: true,
         dragSortInterval: 50,
         dragContainer: document.body,
         dragStartPredicate: function (item, event) {
-          if (event.deltaTime > 50 && !elementMatches(event.target.parentNode.parentNode, '.white')) {
+          if (event.deltaTime > 50 && !elementMatches(event.target.parentNode.parentNode, '.transparent')) {
             return Muuri.ItemDrag.defaultStartPredicate(item, event);
           }
         },
@@ -71,8 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update UI indices.
     updateIndices();
+    //rowsToArray();
 
     if (currentRow >= rows - 1) {
+      grid._settings.dragEnabled = false; // disable dragging to prevent loops
       setTimeout(function () { // wait 2 sec for the last row to load
         window.alert("Mäng läbi!");
         location.reload();
@@ -93,17 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     updateIndices();
   }
-
-  function changeLayout() {
-    grid._settings.layout = {
-      horizontal: false,
-      alignRight: false,
-      alignBottom: false,
-      fillGaps: false
-    };
-    grid.layout();
-  }
-
   //
   // Generic helper functions
   //
@@ -118,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
         color = getRandomItem(filterOptions);
         width = blocks[i];
       } else {
-        color = "white";
+        color = "transparent";
         width = 1;
       }
 
@@ -127,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let height = 1;
       let itemElem = document.createElement('div');
       let itemTemplate = '' +
-        '<div class="item h' + height + ' w' + width + ' ' + color + '" data-id="' + id + '" data-color="' + color + '" data-title="' + title + '">' +
+        '<div class="item h' + height + ' w' + width + ' row' + currentRow + ' ' + color + '" data-id="' + id + '" data-color="' + color + '" data-title="' + title + '">' +
         '<div class="item-content">' +
         '<div class="card">' +
         '</div>' +
@@ -209,6 +204,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let blockElements = generateSpecificElements(blockNumbers);
     console.log(blockElements);
     return blockElements;
+  }
+
+  function rowsToArray(){
+    console.log("All rows:");
+    console.log(grid.getItems());
   }
 
   function forceHttps() {
