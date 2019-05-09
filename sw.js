@@ -2,6 +2,7 @@
 
 let CACHE_NAME = 'site-cache';
 let urlsToCache = [
+  '.',
   'offline.manifest',
   'favicon.png',
   'index.html',
@@ -18,8 +19,8 @@ self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(CACHE_NAME)
     .then(function (cache) {
-      console.log('Opened cache');
-      console.log(urlsToCache);
+      console.log('Using content from SW cache');
+      //console.log(urlsToCache);
       return cache.addAll(urlsToCache);
     })
   );
