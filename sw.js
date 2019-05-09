@@ -2,7 +2,7 @@
 
 let CACHE_NAME = 'site-cache';
 let urlsToCache = [
-  'offline.webmanifest',
+  'offline.manifest',
   'favicon.png',
   'index.html',
   'index.js',
