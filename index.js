@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update UI indices.
     updateIndices();
+
     //rowsToArray();
 
     if (currentRow >= rows - 1) {
@@ -202,13 +203,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log("Blocks: " + blockNumbers + " Covering: " + sum + "/" + columns);
     let blockElements = generateSpecificElements(blockNumbers);
-    console.log(blockElements);
+    //console.log(blockElements); // HTML elements
+
     return blockElements;
   }
 
   function rowsToArray(){
     console.log("All rows:");
-    console.log(grid.getItems());
+    let objects = grid.getItems();
+    let blockElements = []; // HTML elements
+
+    objects.forEach(element => {
+      blockElements.push(element._element);
+    });
+
+    console.log(blockElements);
+    return blockElements;
+  }
+
+  function applyGravity(){
+    let blockElements = rowsToArray();
+
+    blockElements.forEach(element => {
+      console.log(element.classList);
+      // Should check between 2 rows whether a block can "fall"
+    });
+  }
+
+  function destroyRow(){
+    let blockElements = rowsToArray();
+
+    blockElements.forEach(element => {
+      console.log(element.classList);
+      // Should check within a row whether all blocks can be destroyed and next ones moved under
+    });
   }
 
   function forceHttps() {
