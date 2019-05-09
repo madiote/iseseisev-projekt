@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return blockElements;
   }
 
-  function rowsToArray(){
+  function rowsToArray() {
     console.log("All rows:");
     let objects = grid.getItems();
     let blockElements = []; // HTML elements
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return blockElements;
   }
 
-  function applyGravity(){
+  function applyGravity() {
     let blockElements = rowsToArray();
 
     blockElements.forEach(element => {
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function destroyRow(){
+  function destroyRow() {
     let blockElements = rowsToArray();
 
     blockElements.forEach(element => {
@@ -260,6 +260,18 @@ document.addEventListener('DOMContentLoaded', function () {
 let deferredPrompt;
 const pwaAddButton = document.querySelector("#pwaAddButton");
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').then(function (registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function (err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
@@ -273,7 +285,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 pwaAddButton.addEventListener('click', (e) => {
   // hide our user interface that shows our PWA add button
-  btnAdd.style.display = 'none';
+  pwaAddButton.style.display = 'none';
   // Show the prompt
   deferredPrompt.prompt();
   // Wait for the user to respond to the prompt
@@ -287,4 +299,3 @@ pwaAddButton.addEventListener('click', (e) => {
       deferredPrompt = null;
     });
 });
-
