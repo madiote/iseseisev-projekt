@@ -388,3 +388,7 @@ body {
   color: white;
   opacity: 0;
 }
+
+#pwaAddButton {
+  display: none;
+}

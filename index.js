@@ -256,3 +256,35 @@ document.addEventListener('DOMContentLoaded', function () {
   initDemo();
 
 });
+
+let deferredPrompt;
+const pwaAddButton = document.querySelector("#pwaAddButton");
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI notify the user they can add to home screen
+  pwaAddButton.style.display = 'block';
+
+  console.log("PWA is ready to install");
+});
+
+pwaAddButton.addEventListener('click', (e) => {
+  // hide our user interface that shows our PWA add button
+  btnAdd.style.display = 'none';
+  // Show the prompt
+  deferredPrompt.prompt();
+  // Wait for the user to respond to the prompt
+  deferredPrompt.userChoice
+    .then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User added the PWA');
+      } else {
+        console.log('User dismissed the PWA prompt');
+      }
+      deferredPrompt = null;
+    });
+});
+
