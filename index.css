@@ -183,204 +183,204 @@ body {
 .item.red .card {
   /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
-    #FFFFFF 0%,
-    #FF0000 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FF0000 50%,
+      #FFFFFF 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom,
-    color-stop(0%, #FFFFFF),
-    color-stop(50%, #FF0000),
-    color-stop(100%, #FFFFFF));
+      color-stop(0%, #FFFFFF),
+      color-stop(50%, #FF0000),
+      color-stop(100%, #FFFFFF));
   /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,
-    #FFFFFF 0%,
-    #FF0000 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FF0000 50%,
+      #FFFFFF 100%);
   /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top,
-    #FFFFFF 0%,
-    #FF0000 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FF0000 50%,
+      #FFFFFF 100%);
   /* Opera 11.10+ */
   background: -ms-linear-gradient(top,
-    #FFFFFF 0%,
-    #FF0000 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FF0000 50%,
+      #FFFFFF 100%);
   /* IE10+ */
   background: linear-gradient(to bottom,
-    #FFFFFF 0%,
-    #FF0000 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FF0000 50%,
+      #FFFFFF 100%);
   border-color: #FF0000;
 }
 
 .item.orange .card {
   /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
-    #FFFFFF 0%,
-    #FF7F00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FF7F00 50%,
+      #FFFFFF 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom,
-    color-stop(0%, #FFFFFF),
-    color-stop(50%, #FF7F00),
-    color-stop(100%, #FFFFFF));
+      color-stop(0%, #FFFFFF),
+      color-stop(50%, #FF7F00),
+      color-stop(100%, #FFFFFF));
   /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,
-    #FFFFFF 0%,
-    #FF7F00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FF7F00 50%,
+      #FFFFFF 100%);
   /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top,
-    #FFFFFF 0%,
-    #FF7F00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FF7F00 50%,
+      #FFFFFF 100%);
   /* Opera 11.10+ */
   background: -ms-linear-gradient(top,
-    #FFFFFF 0%,
-    #FF7F00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FF7F00 50%,
+      #FFFFFF 100%);
   /* IE10+ */
   background: linear-gradient(to bottom,
-    #FFFFFF 0%,
-    #FF7F00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FF7F00 50%,
+      #FFFFFF 100%);
   border-color: #FF7F00;
 }
 
 .item.yellow .card {
   /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
-    #FFFFFF 0%,
-    #FFFF00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FFFF00 50%,
+      #FFFFFF 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom,
-    color-stop(0%, #FFFFFF),
-    color-stop(50%, #FFFF00),
-    color-stop(100%, #FFFFFF));
+      color-stop(0%, #FFFFFF),
+      color-stop(50%, #FFFF00),
+      color-stop(100%, #FFFFFF));
   /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,
-    #FFFFFF 0%,
-    #FFFF00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FFFF00 50%,
+      #FFFFFF 100%);
   /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top,
-    #FFFFFF 0%,
-    #FFFF00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FFFF00 50%,
+      #FFFFFF 100%);
   /* Opera 11.10+ */
   background: -ms-linear-gradient(top,
-    #FFFFFF 0%,
-    #FFFF00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FFFF00 50%,
+      #FFFFFF 100%);
   /* IE10+ */
   background: linear-gradient(to bottom,
-    #FFFFFF 0%,
-    #FFFF00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #FFFF00 50%,
+      #FFFFFF 100%);
   border-color: #FFFF00;
 }
 
 .item.green .card {
   /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
-    #FFFFFF 0%,
-    #00FF00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #00FF00 50%,
+      #FFFFFF 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom,
-    color-stop(0%, #FFFFFF),
-    color-stop(50%, #00FF00),
-    color-stop(100%, #FFFFFF));
+      color-stop(0%, #FFFFFF),
+      color-stop(50%, #00FF00),
+      color-stop(100%, #FFFFFF));
   /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,
-    #FFFFFF 0%,
-    #00FF00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #00FF00 50%,
+      #FFFFFF 100%);
   /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top,
-    #FFFFFF 0%,
-    #00FF00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #00FF00 50%,
+      #FFFFFF 100%);
   /* Opera 11.10+ */
   background: -ms-linear-gradient(top,
-    #FFFFFF 0%,
-    #00FF00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #00FF00 50%,
+      #FFFFFF 100%);
   /* IE10+ */
   background: linear-gradient(to bottom,
-    #FFFFFF 0%,
-    #00FF00 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #00FF00 50%,
+      #FFFFFF 100%);
   border-color: #00FF00;
 }
 
 .item.blue .card {
   /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
-    #FFFFFF 0%,
-    #0000FF 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #0000FF 50%,
+      #FFFFFF 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom,
-    color-stop(0%, #FFFFFF),
-    color-stop(50%, #0000FF),
-    color-stop(100%, #FFFFFF));
+      color-stop(0%, #FFFFFF),
+      color-stop(50%, #0000FF),
+      color-stop(100%, #FFFFFF));
   /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,
-    #FFFFFF 0%,
-    #0000FF 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #0000FF 50%,
+      #FFFFFF 100%);
   /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top,
-    #FFFFFF 0%,
-    #0000FF 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #0000FF 50%,
+      #FFFFFF 100%);
   /* Opera 11.10+ */
   background: -ms-linear-gradient(top,
-    #FFFFFF 0%,
-    #0000FF 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #0000FF 50%,
+      #FFFFFF 100%);
   /* IE10+ */
   background: linear-gradient(to bottom,
-    #FFFFFF 0%,
-    #0000FF 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #0000FF 50%,
+      #FFFFFF 100%);
   border-color: #0000FF;
 }
 
 .item.purple .card {
   /* https://codepen.io/raad/pen/EzFAv */
   background: -moz-linear-gradient(top,
-    #FFFFFF 0%,
-    #9400D3 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #9400D3 50%,
+      #FFFFFF 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom,
-    color-stop(0%, #FFFFFF),
-    color-stop(50%, #9400D3),
-    color-stop(100%, #FFFFFF));
+      color-stop(0%, #FFFFFF),
+      color-stop(50%, #9400D3),
+      color-stop(100%, #FFFFFF));
   /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,
-    #FFFFFF 0%,
-    #9400D3 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #9400D3 50%,
+      #FFFFFF 100%);
   /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top,
-    #FFFFFF 0%,
-    #9400D3 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #9400D3 50%,
+      #FFFFFF 100%);
   /* Opera 11.10+ */
   background: -ms-linear-gradient(top,
-    #FFFFFF 0%,
-    #9400D3 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #9400D3 50%,
+      #FFFFFF 100%);
   /* IE10+ */
   background: linear-gradient(to bottom,
-    #FFFFFF 0%,
-    #9400D3 50%,
-    #FFFFFF 100%);
+      #FFFFFF 0%,
+      #9400D3 50%,
+      #FFFFFF 100%);
   border-color: #9400D3;
 }
 
@@ -391,40 +391,41 @@ body {
 
 /* https://codepen.io/lemmin/pen/WObwRX */
 .rainbow-button {
-  text-decoration:none;
-  color:black;
-  width:calc(30vw + 6px);
-  height:calc(8vw + 6px);
+  text-decoration: none;
+  color: black;
+  width: calc(13vw + 15px);
+  height: calc(3vw + 15px);
   background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
-  border-radius:5px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-transform:uppercase;
-  font-size:3vw;
-  font-weight:bold;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 1vw;
 }
+
 .rainbow-button:after {
-  content:attr(alt);
-  width:30vw;
-  height:8vw;
-  background-color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  content: attr(alt);
+  width: 13vw;
+  height: 3vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .rainbow-button:hover {
-  animation:slidebg 2s linear infinite;
+  animation: slidebg 2s linear infinite;
 }
 
 @keyframes slidebg {
   to {
-    background-position:20vw;
+    background-position: 20vw;
   }
 }
 
 .center {
-  display: flex; 
+  display: flex;
   justify-content: center;
 }
 
